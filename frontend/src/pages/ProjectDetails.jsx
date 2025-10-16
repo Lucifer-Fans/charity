@@ -50,7 +50,7 @@ const ProjectDetails = () => {
   const [project, setProject] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/projects`)
+    axios.get(`https://thecresent-backend.onrender.com/api/projects`)
       .then(res => {
         const p = res.data.find(pr => pr._id === id);
         setProject(p);

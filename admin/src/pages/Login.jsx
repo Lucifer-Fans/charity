@@ -102,7 +102,7 @@ const Login = () => {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://thecresent-backend.onrender.com/api/auth/login", {
         username,
         password,
       });

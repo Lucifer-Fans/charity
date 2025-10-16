@@ -207,7 +207,7 @@ const DonationRecords = () => {
   const token = localStorage.getItem("adminToken");
   const receiptRef = useRef();
 
-  const API_BASE = import.meta.env.REACT_API_URL || "https://thecresent-backend.onrender.com/api";
+  const API_BASE = import.meta.env.REACT_APP_API_URL || "https://thecresent-backend.onrender.com/api";
 
   useEffect(() => {
     fetchDonations();

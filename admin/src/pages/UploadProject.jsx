@@ -15,7 +15,7 @@ const UploadProject = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:5000/api/projects/${id}`, {
+        .get(`https://thecresent-backend.onrender.com/api/projects/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setEditData(res.data))

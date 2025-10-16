@@ -90,9 +90,9 @@ const UploadProject = () => {
         };
 
         if (editData) {
-          await axios.put(`http://localhost:5000/api/projects/${editData._id}`, data, config);
+          await axios.put(`https://thecresent-backend.onrender.com/api/projects/${editData._id}`, data, config);
         } else {
-          await axios.post('http://localhost:5000/api/projects', data, config);
+          await axios.post('https://thecresent-backend.onrender.com/api/projects', data, config);
         }
         onSuccess();
       } catch (err) {

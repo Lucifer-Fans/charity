@@ -1,4 +1,3 @@
-//perfect
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -197,14 +196,12 @@ const Home = () => {
                     swiperRef.current?.slideToLoop(index);
                     setActiveIndex(index);
                   }}
-                  className={`relative w-10 sm:w-14 h-1.5 rounded-full overflow-hidden transition-all duration-300 ${
-                    activeIndex === index ? 'scale-110' : 'scale-100'
-                  }`}
+                  className={`relative w-10 sm:w-14 h-1.5 rounded-full overflow-hidden transition-all duration-300 ${activeIndex === index ? 'scale-110' : 'scale-100'
+                    }`}
                 >
                   <div
-                    className={`absolute inset-0 transition-colors duration-300 ${
-                      activeIndex === index ? 'bg-gray-300' : 'bg-gray-200'
-                    }`}
+                    className={`absolute inset-0 transition-colors duration-300 ${activeIndex === index ? 'bg-gray-300' : 'bg-gray-200'
+                      }`}
                   ></div>
 
                   {activeIndex === index && (
@@ -318,15 +315,18 @@ const Home = () => {
       </section>
 
       {/* Quote Section */}
-      <section className="bg-gray-500 py-20 text-center text-white px-4 sm:px-6">
-        <blockquote className="text-xl sm:text-2xl md:text-4xl font-semibold mb-6">
-          "The best way to find yourself is to lose yourself in the service of others."
-        </blockquote>
+      <section className="bg-blue-400 py-16 text-center text-white px-4 sm:px-6">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 tracking-wide">
+          "Be Part of the Change"
+        </h3>
+        <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto italic">
+          Join us in making a difference. Your support can transform lives and create opportunities for thousands in need.
+        </p>
         <Link
           to="/donate"
-          className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 text-sm sm:text-base"
+          className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg transform transition duration-300 hover:scale-105 hover:bg-gray-100"
         >
-          Donate Us
+          Donate Now
         </Link>
       </section>
     </div>

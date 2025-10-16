@@ -451,7 +451,7 @@ const Donate = () => {
 
   const handleGenerateQr = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/donations/temp", form);
+      const res = await axios.post("https://thecresent-backend.onrender.com/api/donations/temp", form);
       setQr(res.data.qrCode);
       setShowQr(true);
     } catch (error) {
@@ -483,7 +483,7 @@ const Donate = () => {
     formData.append("receipt", receipt);
 
     try {
-      await axios.post("http://localhost:5000/api/donations", formData, {
+      await axios.post("https://thecresent-backend.onrender.com/api/donations", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

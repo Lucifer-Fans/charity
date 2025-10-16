@@ -223,7 +223,7 @@ const DonationRecords = () => {
       });
       setDonations(res.data);
     } catch (err) {
-      console.error(err);
+      console.error("Error fetching donations:", err);
     }
   };
 
@@ -403,3 +403,4 @@ const DonationRecords = () => {
 };
 
 export default DonationRecords;
+

@@ -207,7 +207,10 @@ const DonationRecords = () => {
   const token = localStorage.getItem("adminToken");
   const receiptRef = useRef();
 
-  const API_BASE = import.meta.env.REACT_APP_API_URL || "https://thecresent-backend.onrender.com/api";
+  // ✅ CRA environment variable with fallback
+  const API_BASE =
+    process.env.REACT_APP_API_URL ||
+    "https://thecresent-backend.onrender.com/api";
 
   useEffect(() => {
     fetchDonations();
@@ -247,12 +250,15 @@ const DonationRecords = () => {
 
   const handleDownloadTransactionReceipt = (donation) => {
     if (!donation.receiptUrl) return;
+
+    // Mobile-safe: prepend full server URL if relative
     const url = donation.receiptUrl.startsWith("http")
       ? donation.receiptUrl
       : `${API_BASE.replace("/api", "")}${donation.receiptUrl}`;
+
     const link = document.createElement("a");
     link.href = url;
-    link.target = "_blank";
+    link.target = "_blank"; // important for mobile
     link.download = `transaction_receipt_${donation.name}.pdf`;
     document.body.appendChild(link);
     link.click();

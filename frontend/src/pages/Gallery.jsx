@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Lightbox from 'react-image-lightbox';
-import 'react-image-lightbox/style.css';
 import Contactbg from "../assets/Contactbg.png";
 
 // Sample gallery images

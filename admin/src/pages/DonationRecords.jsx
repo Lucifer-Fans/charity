@@ -18,7 +18,7 @@ const DonationRecords = () => {
 
   const fetchDonations = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/donations', {
+      const res = await axios.get('https://thecresent-backend.onrender.com/api/donations', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDonations(res.data);

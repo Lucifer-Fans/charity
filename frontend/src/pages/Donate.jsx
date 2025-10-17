@@ -65,7 +65,7 @@ const Donate = () => {
     formData.append("receipt", receipt);
 
     try {
-      await axios.post("http://localhost:5000/api/donations", formData, {
+      await axios.post("https://thecresent-backend.onrender.com/api/donations", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

@@ -19,7 +19,7 @@ const Projects = () => {
   // Fetch all projects once
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/projects')
+      .get('https://thecresent-backend.onrender.com/api/projects')
       .then(res => setAllProjects(res.data))
       .catch(err => {
         console.error(err);

@@ -15,7 +15,7 @@ const DonationRecords = () => {
   // ✅ CRA environment variable with fallback
   const API_BASE =
     process.env.REACT_APP_API_URL ||
-    "http://localhost:5000/api";
+    "https://thecresent-backend.onrender.com/api";
 
   useEffect(() => {
     fetchDonations();

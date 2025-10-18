@@ -11,7 +11,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/projects', {
+      .get('https://thecresent-backend.onrender.com/api/projects', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setProjects(res.data))
@@ -21,7 +21,7 @@ const Dashboard = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this project?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${id}`, {
+      await axios.delete(`https://thecresent-backend.onrender.com/api/projects/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects((prev) => prev.filter((p) => p._id !== id));

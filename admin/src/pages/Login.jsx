@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { User, Lock, Eye, EyeOff } from "lucide-react";
-import logo from "../assets/logo.png";
+import logo from "../pages/logo.png";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
+      const res = await axios.post("https://thecresent-backend.onrender.com/api/auth/login", {
         username,
         password,
       });

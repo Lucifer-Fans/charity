@@ -14,7 +14,7 @@ const Inbox = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/contacts', {
+      const res = await axios.get('https://thecresent-backend.onrender.com/api/contacts', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(res.data);
@@ -26,7 +26,7 @@ const Inbox = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/contacts/${id}`, {
+      await axios.delete(`https://thecresent-backend.onrender.com/api/contacts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(messages.filter(msg => msg._id !== id));

@@ -21,7 +21,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/contacts", formData);
+      await axios.post("https://thecresent-backend.onrender.com/api/contacts", formData);
       setSubmitted(true);
       setFormData({ name: "", email: "", number: "", message: "" });
       setTimeout(() => setSubmitted(false), 4000);

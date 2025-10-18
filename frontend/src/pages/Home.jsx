@@ -38,7 +38,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/projects');
+        const res = await axios.get('https://thecresent-backend.onrender.com/api/projects');
         const currentProjects = res.data
           .filter((p) => p.category === 'current')
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // newest first

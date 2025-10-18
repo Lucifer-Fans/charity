@@ -15,7 +15,7 @@ const UploadProject = () => {
   useEffect(() => {
     if (id) {
       axios
-        .get(`https://thecresent-backend.onrender.com/api/projects/${id}`, {
+        .get(`http://localhost:5000/api/projects/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setEditData(res.data))
@@ -90,9 +90,9 @@ const UploadProject = () => {
         };
 
         if (editData) {
-          await axios.put(`https://thecresent-backend.onrender.com/api/projects/${editData._id}`, data, config);
+          await axios.put(`http://localhost:5000/api/projects/${editData._id}`, data, config);
         } else {
-          await axios.post('https://thecresent-backend.onrender.com/api/projects', data, config);
+          await axios.post('http://localhost:5000/api/projects', data, config);
         }
         onSuccess();
       } catch (err) {
@@ -219,12 +219,12 @@ const UploadProject = () => {
   // ----- End ProjectForm -----
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex-grow p-4 md:p-8 w-full">
+      <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8 w-full">
         <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-10">
           <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center md:text-left">
             {editData ? 'Edit Project' : 'Upload Project'}

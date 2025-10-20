@@ -14,7 +14,7 @@ const Inbox = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get('https://thecresent-backend.onrender.com/api/contacts', {
+      const res = await axios.get('http://localhost:5000/api/contacts', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(res.data);
@@ -26,7 +26,7 @@ const Inbox = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this message?')) return;
     try {
-      await axios.delete(`https://thecresent-backend.onrender.com/api/contacts/${id}`, {
+      await axios.delete(`http://localhost:5000/api/contacts/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(messages.filter(msg => msg._id !== id));
@@ -42,7 +42,8 @@ const Inbox = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
-      <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8">
+      {/* <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8"> */}
+      <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8 pt-16 md:pt-8">
         <h1 className="text-3xl font-bold mb-6 text-center md:text-left">Inbox</h1>
 
         {/* Desktop Table */}

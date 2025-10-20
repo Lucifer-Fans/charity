@@ -35,7 +35,7 @@ const Dashboard = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
-      <div className="flex-grow ml-0 md:ml-64 p-6 md:p-8">
+      <div className="flex-grow ml-0 md:ml-64 p-6 md:p-8 pt-16 md:pt-8">
         <h1 className="text-3xl font-bold mb-6 md:mb-8 text-center md:text-left">
           Dashboard - Projects
         </h1>

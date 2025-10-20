@@ -39,7 +39,7 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen w-64 bg-white shadow-lg z-40 transform transition-transform duration-300
+        className={`fixed top-0 left-0 h-screen w-64 bg-white shadow-lg z-50 transform transition-transform duration-300
         ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
         md:translate-x-0 flex flex-col justify-between`}
       >
@@ -79,7 +79,7 @@ const Sidebar = () => {
       {/* Overlay for mobile */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-25 z-30 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-40 z-40 md:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}

@@ -4,7 +4,7 @@ import axios from "axios";
 import { FaDownload, FaWhatsapp } from "react-icons/fa";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import logo from "../pages/logo.png";
+import logo from "../assets/logo.png";
 
 const DonationRecords = () => {
   const [donations, setDonations] = useState([]);
@@ -15,7 +15,7 @@ const DonationRecords = () => {
   // ✅ CRA environment variable with fallback
   const API_BASE =
     process.env.REACT_APP_API_URL ||
-    "https://thecresent-backend.onrender.com/api";
+    "http://localhost:5000/api";
 
   useEffect(() => {
     fetchDonations();
@@ -73,7 +73,8 @@ const DonationRecords = () => {
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
-      <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8">
+      {/* <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8"> */}
+      <div className="flex-grow ml-0 md:ml-64 p-4 md:p-8 pt-16 md:pt-8"> 
         <h1 className="text-3xl font-bold mb-6 text-center md:text-left">
           Donation Records
         </h1>

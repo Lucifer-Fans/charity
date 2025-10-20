@@ -4,7 +4,7 @@ import axios from "axios";
 import { FaDownload, FaWhatsapp } from "react-icons/fa";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import logo from "../assets/logo.png";
+import logo from "../pages/logo.png";
 
 const DonationRecords = () => {
   const [donations, setDonations] = useState([]);
